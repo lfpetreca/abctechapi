@@ -15,16 +15,16 @@ import java.util.List;
 @RequestMapping("/assistance")
 public class AssistanceController {
 
-    private final AssistanceService service;
+    private final AssistanceService assists;
 
     @Autowired
     public AssistanceController(AssistanceService service){
-        this.service = service;
+        this.assists = service;
     }
 
     @GetMapping()
     public ResponseEntity<List<Assistance>> getAssists(){
-        List<Assistance> list = service.getAssistanceList();
+        List<Assistance> list = assists.getAssistanceList();
         return ResponseEntity.ok(list);
     }
 
